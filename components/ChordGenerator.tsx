@@ -32,11 +32,11 @@ const ChordGenerator: React.FC = () => {
   };
 
   const rootButtons = roots.map((root) => (
-    <ChordButton setRootNote={setRootNote} root={root} />
+    <ChordButton key={root} setRootNote={setRootNote} root={root} />
   ));
 
   const chordQualityButtons = qualities.map((quality) => (
-    <ChordButton setChordQuality={setChordQuality} quality={quality} />
+    <ChordButton key={quality} setChordQuality={setChordQuality} quality={quality} />
   ));
 
   const chordNotes = triads[`${rootNote}${chordQuality}`];
@@ -44,7 +44,7 @@ const ChordGenerator: React.FC = () => {
 
   return (
     <div className='flex flex-col text-slate-400 justify-center items-stretch min-h-full min-w-fit w-3/5 border-2 border-slate-700 rounded py-8 px-20 my-10'>
-      <h2 className="text-blue-600 font-bold text-6xl flex justify-center my-3">'armOhknees</h2>
+      <h2 className="text-blue-600 font-bold text-6xl flex justify-center my-3">&apos;armOhknees</h2>
 
       {isPlaying ? (
         <button

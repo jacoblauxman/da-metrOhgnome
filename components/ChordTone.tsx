@@ -63,7 +63,7 @@ const ChordTone: React.FC<ChordToneProps> = ({
       oscillatorRef.current?.disconnect();
       gainNodeRef.current?.disconnect();
     };
-  }, [audioContextRef.current, oscillatorType, frequency, detune, isPlaying, volume, octaveShift]);
+  }, [oscillatorType, frequency, detune, isPlaying, volume, octaveShift, note]);
 
 
   const handleOctaveInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {

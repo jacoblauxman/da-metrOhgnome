@@ -19,7 +19,7 @@ export default function Home() {
       <ChordGenerator />
       <Link className="text-gray-300 text-sm bg-slate-700 p-3 rounded hover:bg-slate-400 ease-in-out duration-300 hover:text-indigo-700 hover:font-semibold flex-auto min-w-fit w-1/2 cursor-pointer justify-center items-center text-center"
         href='/chords'>
-        chords'n'chords
+        chords&apos;n&apos;chords
       </Link>
     </main>
   )
