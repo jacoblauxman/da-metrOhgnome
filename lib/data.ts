@@ -37,6 +37,21 @@ export const notes: { [key: string]: number } = {
   'B5': 987.77
 }
 
+export const bassNotes: { [key: string]: number } = {
+  'C2': 65.41,
+  'C#/Db2': 69.30,
+  'D2': 73.42,
+  'D#/Eb2': 77.78,
+  'E2': 82.41,
+  'F2': 87.31,
+  'F#/Gb2': 92.50,
+  'G2': 98,
+  'G#/Ab2': 103.83,
+  'A2': 110.00,
+  'A#/Bb2': 116.54,
+  'B2': 123.47,
+  'C3': 130.81,
+}
 
 export const triads: { [key: string]: string[] } = {
   'Cmaj': ['C3', 'E3', 'G3'],

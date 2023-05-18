@@ -24,3 +24,44 @@ export const triadIdx = (idx: number): string => {
   idx === 0 ? res = 'Root' : idx === 1 ? res = 'Third' : res = 'Fifth'
   return res
 }
+
+
+
+// for ChordKBCtrl
+// returning root value from keyboard input:
+
+export const getRootKeyPress = (key: string): string | null => {
+  switch (key) {
+    case 'a':
+      return 'A'
+    case 'b':
+      return 'B'
+    case 'c':
+      return 'C'
+    case 'd':
+      return 'D'
+    case 'e':
+      return 'E'
+    case 'f':
+      return 'F'
+    case 'g':
+      return 'G'
+    default:
+      return null
+  }
+}
+
+export const getQualityKeyPress = (key: string): string | null => {
+  switch (key) {
+    case 'i':
+      return 'maj'
+    case 'k':
+      return 'min'
+    case 'j':
+      return 'dim'
+    case 'l':
+      return 'aug'
+    default:
+      return null
+  }
+}

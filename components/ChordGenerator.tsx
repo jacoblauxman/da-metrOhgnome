@@ -3,7 +3,9 @@
 import React, { useState } from 'react';
 import ChordTone from './ChordTone';
 import ChordButton from './ChordButton';
+import ChordKBCtrl from './ChordKBCtrl';
 import { notes, triads, qualities, roots } from '@/lib/data'; // Replace with the actual file name containing notes and triads
+
 
 const ChordGenerator: React.FC = () => {
   const [oscillatorType, setOscillatorType] = useState<OscillatorType>('sine');
@@ -12,6 +14,7 @@ const ChordGenerator: React.FC = () => {
   const [octaveShifts, setOctaveShifts] = useState([0, 0, 0]);
   const [rootNote, setRootNote] = useState('C');
   const [chordQuality, setChordQuality] = useState('maj');
+  const [isSharp, setIsSharp] = useState<boolean>(false)
 
   const handlePlayButtonClick = () => {
     setIsPlaying(!isPlaying);
@@ -80,9 +83,22 @@ const ChordGenerator: React.FC = () => {
       <h3
         className="text-blue-400 hover:text-blue-200 ease-in-out duration-300 font-bold text-3xl flex justify-center my-3"
       >root</h3>
+
       <div
         className='grid grid-cols-4 gap-2 my-3 p-2'
       >{rootButtons}</div>
+      <div className='flex flex-col items-center justify-center text-sm font-light text-slate-300 mb-4'>
+        <div
+          className={`mb-1 px-2 py-1 rounded ${isSharp ? ' text-bold text-cyan-400' : 'text-thin'}`}
+        >
+          ( 3 ) accidental
+        </div>
+        <div
+          className={`mt-1 px-2 py-1 rounded ${isSharp ? 'text-thin' : ' text-bold text-cyan-400'}`}
+        >
+          ( 8 ) back to natural
+        </div>
+      </div>
       <h3
         className="text-blue-400  hover:text-blue-200 ease-in-out duration-300 font-bold text-3xl flex justify-center my-3"
       >
@@ -90,7 +106,12 @@ const ChordGenerator: React.FC = () => {
       </h3>
       <div
         className='grid grid-cols-4 gap-2 my-3 p-2'
-      >{chordQualityButtons}</div>
+      >{chordQualityButtons}
+        <div className='flex justify-center font-light text-white hover:text-slate-300'>i</div>
+        <div className='flex justify-center font-light text-white hover:text-slate-300'>k</div>
+        <div className='flex justify-center font-light text-white hover:text-slate-300'>l</div>
+        <div className='flex justify-center font-light text-white hover:text-slate-300'>j</div>
+      </div>
       <div
         className="text-green-500 hover:text-green-400 ease-in-out duration-300 font-bold text-5xl flex justify-center my-3">
         {rootNote} {chordQuality}
@@ -109,6 +130,10 @@ const ChordGenerator: React.FC = () => {
           onOctaveShiftChange={(newShift) => handleOctaveShiftChange(index, newShift)}
         />
       ))}
+      {/* TESTING!! keyboard control for easier chord manipulation -- will need to solve use with hexatonic water page */}
+      <div>
+        <ChordKBCtrl onRootNoteChange={setRootNote} onChordQualityChange={setChordQuality} onAccidentalChange={setIsSharp} setIsPlaying={setIsPlaying} isPlaying={isPlaying} />
+      </div>
     </div>
   );
 };
