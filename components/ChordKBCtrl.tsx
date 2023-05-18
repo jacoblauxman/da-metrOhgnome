@@ -47,6 +47,7 @@ export default function ChordKBCtrl({ onRootNoteChange, onChordQualityChange, on
             onRootNoteChange(accidentalRoot)
           }
           setAccidentalKeyPressed(false)
+          onAccidentalChange(false)
         } else {
           onRootNoteChange(root)
         }
