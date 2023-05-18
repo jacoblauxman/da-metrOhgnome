@@ -163,6 +163,12 @@ export default function ToneGenerator() {
             htmlFor="detune"
             className='absolute -bottom-1 left-2 text-sm font-thin'>detune</label>
         </div>
+        <div className='flex min-w-fit mx-10 px-20 justify-center items-center'>
+          <button
+            className="text-gray-300 text-sm font-extralight bg-slate-700 p-2 rounded hover:bg-slate-800 ease-in-out duration-300 hover:text-indigo-400 hover:font-normal flex-auto align-middle min-w-fit cursor-pointer"
+            onClick={() => setDetune(0)}
+          >back to nil</button>
+        </div>
       </div>
       <div className='relative flex flex-col items-center justify-center'>
         <select
