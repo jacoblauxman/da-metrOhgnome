@@ -8,7 +8,7 @@ import { notes, triads, qualities, roots } from '@/lib/data'; // Replace with th
 const ChordGenerator: React.FC = () => {
   const [oscillatorType, setOscillatorType] = useState<OscillatorType>('sine');
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(0.3);
   const [octaveShifts, setOctaveShifts] = useState([0, 0, 0]);
   const [rootNote, setRootNote] = useState('C');
   const [chordQuality, setChordQuality] = useState('maj');
@@ -62,7 +62,7 @@ const ChordGenerator: React.FC = () => {
         >Volume</h3>
         <input
           className="range-lg text-white flex justify-center mb-3 bg-slate-700 py-3 rounded focus:outline-none text-left accent-indigo-600 hover:accent-indigo-600 min-w-full w-full h-3 cursor:pointer"
-          type="range" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} />
+          type="range" min="0" max="0.65" step="0.01" value={volume} onChange={handleVolumeChange} />
       </div>
       <div>
         <h3

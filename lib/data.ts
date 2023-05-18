@@ -24,6 +24,17 @@ export const notes: { [key: string]: number } = {
   'A#/Bb4': 466.16,
   'B4': 493.88,
   'C5': 523.25,
+  'C#/Db5': 554.37,
+  'D5': 587.33,
+  'D#/Eb5': 622.25,
+  'E5': 659.25,
+  'F5': 698.46,
+  'F#/Gb5': 739.99,
+  'G5': 783.99,
+  'G#/Ab5': 830.61,
+  'A5': 880.00,
+  'A#/Bb5': 932.33,
+  'B5': 987.77
 }
 
 
@@ -79,5 +90,34 @@ export const triads: { [key: string]: string[] } = {
 };
 
 
+
+// for ez melody play
+export const eMinPent = ['D4', 'E4', 'G4', 'A4', 'B4', 'D5', 'E5', 'G5']
+export const eBMinPent = ['C#/Db4', 'D#/Eb4', 'F#/Gb4', 'G#/Ab4', 'A#/Bb4', 'C#/Db5', 'D#/Eb5', 'F#/Gb5']
+export const aMinPent = ['G4', 'A4', 'C4', 'D4', 'E4', 'G5', 'A5', 'C5']
+
 export const qualities = ['maj', 'min', 'aug', 'dim']
 export const roots = ['A', 'A#/Bb', 'B', 'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab'];
+
+export type FreqMap = {
+  [key: string]: number
+}
+
+export const pentSelect = (key: string): FreqMap => {
+  let res: FreqMap = {}
+  if (key === 'E') {
+    for (let note of eMinPent) {
+      res[note] = notes[note]
+    }
+  } else if (key === 'Eb') {
+    for (let note of eBMinPent) {
+      res[note] = notes[note]
+    }
+  } else if (key === 'A') {
+    for (let note of aMinPent) {
+      res[note] = notes[note]
+    }
+  }
+
+  return res
+}
