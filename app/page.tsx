@@ -7,7 +7,7 @@ import ToneGenerator from '@/components/ToneGenerator'
 
 export default function Home() {
   return (
-    <main className='flex flex-col w-1/4 min-w-fit justify-center items-center p-3'>
+    <main className='mt-10 flex flex-col w-1/4 min-w-fit min-h-fit justify-center items-center p-3'>
       <h1 className="text-green-400 font-bold text-6xl flex justify-center my-10">metrohgnome</h1>
       <Metronome />
       <Timer />

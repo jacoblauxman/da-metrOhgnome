@@ -21,7 +21,7 @@ export default function RootLayout({
       }}>
       <html lang="en">
         <body
-          className='bg-slate-800 flex flex-col items-center justify-center min-h-screen min-w-fit box-border'
+          className='bg-slate-800 flex flex-col items-center justify-center min-h-screen min-w-fit max-w-4/5 box-border'
         >
           <Header />
           {children}
