@@ -10,6 +10,7 @@ import {
 } from "@clerk/nextjs";
 import Link from "next/link";
 
+export const runtime = 'edge'
 
 export default async function Page() {
 
