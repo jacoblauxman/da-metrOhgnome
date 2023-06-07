@@ -10,7 +10,6 @@ import {
 } from "@clerk/nextjs";
 import Link from "next/link";
 
-export const runtime = 'edge'
 
 export default async function Page() {
 
@@ -58,7 +57,7 @@ export default async function Page() {
             </section>
           ) : (
             <section className='text-3xl text-orange-300 min-w-fit w-9/12 flex flex-col flex-wrap border-2 border-lime-800 px-6 py-8 rounded-md'>
-             ¿ nothing here yet ? dang
+              ¿ nothing here yet ? dang
             </section>
           )
           }
