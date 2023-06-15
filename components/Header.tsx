@@ -16,7 +16,7 @@ export default function Header() {
         <Link
           className='text-2xl text-orange-300 hover:text-orange-500 ease-in-out duration-300'
           href='/todos'>
-          <h1>your list</h1>
+          <h1>your checklist</h1>
         </Link>
         {/* Mount the UserButton component */}
         <UserButton afterSignOutUrl="/" />

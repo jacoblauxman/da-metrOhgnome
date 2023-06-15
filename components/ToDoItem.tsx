@@ -20,7 +20,7 @@ export default function ToDoItem({ todo }: ToDoProps) {
           className='peer accent-indigo-400 h-4 w-4 cursor-pointer rounded border-slate-300 focus:ring-indigo-600'
           id={`todo.id`}
           type='checkbox'
-          defaultChecked={todo.finished}
+          defaultChecked={todo.isFinished}
           onChange={(e) =>
             startTransition(() => toggleFinishedAction(String(todo.id), e.target.checked))}
         />

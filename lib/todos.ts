@@ -3,6 +3,7 @@ import { prisma } from "./prisma"
 
 // GET todos (userId)
 export async function getTodos(userId: string) {
+  // 'use server'
   const todos = await prisma.toDo.findMany({ where: { userId: userId }, orderBy: { id: 'asc' } })
   return todos
 }
@@ -22,11 +23,12 @@ export async function createTodo(text: string, userId: string) {
 }
 
 // PUT todo
-export async function updateTodo(id: number, finished: boolean) {
+export async function updateTodo(id: number, isFinished: boolean) {
   'use server'
 
   try {
-    const todo = await prisma.toDo.update({ where: { id }, data: { finished } })
+    const todo = await prisma.toDo.update({ where: { id }, data: { isFinished: isFinished } })
+    console.log(todo, 'in update todo')
     return { todo }
   } catch (error) {
     return { error }

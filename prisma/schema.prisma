@@ -15,15 +15,15 @@ model ToDo {
   updatedAt DateTime @updatedAt
   text      String   @db.VarChar(255)
   userId    String   @db.VarChar(2000)
-  finished  Boolean  @default(false)
+  isFinished Boolean @default(false)
 }
 
-model Post {
+model Journal {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   title     String   @db.VarChar(255)
   text      String   @db.VarChar(2000)
   userId    String   @db.VarChar(2000)
-  private   Boolean  @default(false)
+  isPrivate Boolean  @default(false)
 }
