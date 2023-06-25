@@ -1,6 +1,7 @@
 'use client'; // Error components must be Client Components
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Error({
   error,
@@ -27,6 +28,12 @@ export default function Error({
       >
         Try again
       </button>
+      <h2>OR</h2>
+      <Link
+        className="text-gray-300 text-sm bg-slate-700 p-3 mb-5 rounded hover:bg-slate-400 ease-in-out duration-300 hover:text-indigo-700 hover:font-semibold flex-auto min-w-fit cursor-pointer"
+        href='/'>
+        homeward boundward
+      </Link>
     </div>
   );
 }
